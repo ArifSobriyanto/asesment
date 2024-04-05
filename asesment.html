@@ -29,7 +29,45 @@
     </div>
  </div>
 
+ <script>
+    let buku =[
+    {nama:"buku1", sharelock: "sharelock", jumlah: 2},
+    {nama:"buku2", lupin: "lupin", jumlah: 2},
+    {nama:"buku3", aladin: "aladin", jumlah: 2,}
+    ];
+    document,getElementById("tampilkanbutton").addEvenListener("click", function() {
+        var input  = document('input[name="jmlh"]').value;
+        var jumlah = inputs[0].value;
+        var select = document("option");
+        var option = select.option[select.selectIndex].text;
+    
 
+        if (jumlah === "") {
+            alert("input jumlah tidak boleh kosong");
+            return
+        }
+
+        console.log("jumlah yang di masukkan:", jumlah);
+        console.log("opsi yang di pilih:", option);
+
+        buku.forEach(function(item) {
+            if(item.sharelock === option) {
+                console.log("buku:", item.nama);
+                console.log("jumlah:", item.jumlah);
+                if(persentInt(jumlah)<= item.jumlah) {
+                    alert("silahkan ambil buku anda");
+                } else {
+                    alert("jumlah melebihi stok buku yang tersedia")
+
+                }
+            bukuditemukan = true;
+        }
+    });
+    if (!bukuditemukan) {
+        alert("buku tidak di temukan");
+    }
+ });
+ </script>
     
 </body>
 </html>
